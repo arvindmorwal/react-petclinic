@@ -36,7 +36,6 @@ export default class PetsList extends Component {
   }
 
   renderPetsList() {
-    console.log(this.props);
     if (!this.props.pets || this.props.pets.length < 1) {
       return (
         <div>No Pets found!</div>

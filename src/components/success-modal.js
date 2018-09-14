@@ -18,7 +18,6 @@ class SuccessModal extends React.Component {
   }
 
   render() {
-    console.log('data' + this.props.response);
     if (this.props.response.status === 200) {
       return (
         <div>

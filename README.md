@@ -5,7 +5,7 @@ This is an application that allows petclinic admin to create a visit for a pet. 
 - This application requires backend REST Api application running in the background locally https://github.com/arvindmorwal/node-petclinic-rest
 - This application will run on port 8080 
   ( make sure its not already in use or change the port number from app.js)
-- This application was test with node version v10.9.0
+- This application was tested with node version v10.9.0
 
 ## Features
 

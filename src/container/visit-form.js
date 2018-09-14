@@ -56,6 +56,7 @@ class VisitForm extends Component{
     this.setState({
       selectedVet: event.target.innerText,
       selectedVetId: event.target.value
+
     });
   }
 
@@ -94,9 +95,7 @@ class VisitForm extends Component{
   }
 
   renderSuccessModal() {
-    console.log('oyo' + this.props.visitRequest);
     const status = _.get(this.props, 'visitRequest.request.status');
-    console.log(status);
     if (status === 200) {
       window.alert(`Visit successully created`);
     } else if (status === 409) {
@@ -105,15 +104,6 @@ class VisitForm extends Component{
   }
 
   handleSubmit() {
-    //reset the fields
-    this.setState({
-      visitDate: null,
-      visitTime: null,
-      description: '',
-      pet: null,
-      vet: null,
-    })
-    console.log('before submit state'+ this.state);
     const payload = {
       visitDate: moment(this.state.appointmentDate).toISOString(),
       visitTime: this.state.time,
@@ -121,7 +111,6 @@ class VisitForm extends Component{
       pet: this.state.selectedPetId,
       vet: this.state.selectedVetId,
     }
-    console.log({payload});
     this.props.submit(payload);
     this.renderSuccessModal();
   }
@@ -183,7 +172,6 @@ class VisitForm extends Component{
 
 function mapStateToProps(state) {
   // object returned from here will end up in this.props
-  console.log({state});
   return {
     vets: state.vets,
     pets: state.pets,
